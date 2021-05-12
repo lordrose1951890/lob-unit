@@ -1,11 +1,11 @@
 package org.lordrose.units;
 
+import static org.lordrose.units.utils.MyAssertions.assertTrue;
+
 public class TestCaseTest extends TestCase {
-    private WasRun test;
 
     public static void main(String[] args) {
-        new TestCaseTest("testRunning").run();
-        new TestCaseTest("testSetUp").run();
+        new TestCaseTest("testTemplateMethod").run();
     }
 
     public TestCaseTest(String testMethod) {
@@ -14,16 +14,11 @@ public class TestCaseTest extends TestCase {
 
     @Override
     void setUp() {
-        test = new WasRun("testMethod");
     }
 
-    public void testRunning() {
+    public void testTemplateMethod() {
+        WasRun test = new WasRun("testMethod");
         test.run();
-        assert test.wasRun;
-    }
-
-    public void testSetUp() {
-        test.run();
-        assert test.wasSetUp;
+        assertTrue("setUp testMethod".equals(test.log));
     }
 }

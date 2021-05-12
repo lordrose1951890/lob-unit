@@ -1,7 +1,7 @@
 - [x] Invoke test method
 - [x] Invoke setUp first
-- [ ] Invoke tearDown afterwards
+- [ ] **Invoke tearDown afterwards**
 - [ ] Invoke tearDown even if the test method fails
 - [ ] Run multiple tests
 - [ ] Report collected results
-- [ ] **Log string in WasRun**
+- [x] Log string in WasRun

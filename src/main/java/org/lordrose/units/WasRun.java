@@ -1,8 +1,8 @@
 package org.lordrose.units;
 
 class WasRun extends TestCase {
-    public boolean wasRun;
-    public boolean wasSetUp;
+    boolean wasRun;
+    String log;
 
     public WasRun(String testMethod) {
         super(testMethod);
@@ -11,10 +11,11 @@ class WasRun extends TestCase {
     @Override
     void setUp() {
         wasRun = false;
-        wasSetUp = true;
+        log = "setUp ";
     }
 
     public void testMethod() {
         wasRun = true;
+        log += testMethod;
     }
 }
