@@ -10,7 +10,7 @@ public class TestingTest {
     public void testTestMethod() {
         WasRun test = new WasRun("testMethod");
         System.out.println(test.wasRun);
-        test.testMethod();
+        test.run();
         System.out.println(test.wasRun);
     }
 }
