@@ -13,6 +13,9 @@ public class TestCase {
     void setUp() {
     }
 
+    void tearDown() {
+    }
+
     public void run() {
         System.out.println("Running: " + testMethod);
         setUp();
@@ -25,6 +28,6 @@ public class TestCase {
                 | IllegalAccessException e) {
             e.printStackTrace();
         }
-        System.out.println("Ran: " + testMethod);
+        tearDown();
     }
 }
