@@ -4,6 +4,7 @@ public class TestingTest {
 
     public static void main(String[] args) {
         TestingTest testSuite = new TestingTest();
+        testSuite.testTestMethod();
     }
 
     public void testTestMethod() {
