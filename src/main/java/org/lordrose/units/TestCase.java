@@ -10,7 +10,12 @@ public class TestCase {
         this.testMethod = testMethod;
     }
 
+    void setUp() {
+    }
+
     public void run() {
+        System.out.println("Running: " + testMethod);
+        setUp();
         Method test;
         try {
             test = this.getClass().getMethod(testMethod);
@@ -20,5 +25,6 @@ public class TestCase {
                 | IllegalAccessException e) {
             e.printStackTrace();
         }
+        System.out.println("Ran: " + testMethod);
     }
 }

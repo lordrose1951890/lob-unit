@@ -1,21 +1,29 @@
 package org.lordrose.units;
 
 public class TestCaseTest extends TestCase {
+    private WasRun test;
+
+    public static void main(String[] args) {
+        new TestCaseTest("testRunning").run();
+        new TestCaseTest("testSetUp").run();
+    }
 
     public TestCaseTest(String testMethod) {
         super(testMethod);
     }
 
-    public static void main(String[] args) {
-        TestCaseTest test = new TestCaseTest("testRunning");
-        test.run();
+    @Override
+    void setUp() {
+        test = new WasRun("testMethod");
     }
 
     public void testRunning() {
-        System.out.println("Hey! It ran, it ran.");
-        WasRun test = new WasRun("testMethod");
-        assert !test.wasRun;
         test.run();
         assert test.wasRun;
+    }
+
+    public void testSetUp() {
+        test.run();
+        assert test.wasSetUp;
     }
 }
