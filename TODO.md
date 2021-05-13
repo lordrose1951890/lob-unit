@@ -5,4 +5,4 @@
 - [ ] Run multiple tests
 - [x] Report collected results
 - [x] Log string in WasRun
-- [ ] Report failed tests
+- [ ] **Report failed tests**
