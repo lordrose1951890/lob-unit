@@ -1,6 +1,5 @@
 package org.lordrose.units;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class TestCase {
@@ -24,10 +23,8 @@ public class TestCase {
         try {
             test = this.getClass().getMethod(testMethod);
             test.invoke(this);
-        } catch (InvocationTargetException
-                | NoSuchMethodException
-                | IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            result.testFailed();
         }
         tearDown();
         return result;

@@ -5,9 +5,10 @@ import static org.lordrose.units.utils.MyAssertions.assertTrue;
 public class TestCaseTest extends TestCase {
 
     public static void main(String[] args) {
-        new TestCaseTest("testTemplateMethod").run();
-        new TestCaseTest("testResult").run();
-        new TestCaseTest("testFailedResult").run();
+        System.out.println(new TestCaseTest("testTemplateMethod").run().summary());
+        System.out.println(new TestCaseTest("testResult").run().summary());
+        System.out.println(new TestCaseTest("testFailedResult").run().summary());
+        System.out.println(new TestCaseTest("testFailedResultFormatting").run().summary());
     }
 
     public TestCaseTest(String testMethod) {
@@ -29,6 +30,13 @@ public class TestCaseTest extends TestCase {
     public void testFailedResult() {
         WasRun test = new WasRun("testBrokenMethod");
         TestResult result = test.run();
+        assertTrue("1 run, 1 failed".equals(result.summary()));
+    }
+
+    public void testFailedResultFormatting() {
+        TestResult result = new TestResult();
+        result.testStarted();
+        result.testFailed();
         assertTrue("1 run, 1 failed".equals(result.summary()));
     }
 }
