@@ -23,4 +23,8 @@ class WasRun extends TestCase {
         wasRun = true;
         log += "testMethod ";
     }
+
+    public void testBrokenMethod() {
+        throw new RuntimeException("Expected exception from broken method");
+    }
 }

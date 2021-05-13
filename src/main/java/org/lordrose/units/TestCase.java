@@ -16,8 +16,9 @@ public class TestCase {
     void tearDown() {
     }
 
-    public void run() {
-        System.out.println("Running: " + testMethod);
+    public TestResult run() {
+        TestResult result = new TestResult();
+        result.testStarted();
         setUp();
         Method test;
         try {
@@ -29,5 +30,6 @@ public class TestCase {
             e.printStackTrace();
         }
         tearDown();
+        return result;
     }
 }
